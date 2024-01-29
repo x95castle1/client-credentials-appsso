@@ -11,8 +11,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Configuration
 public class WebClientConfig {
 
-    @Value("${RESOURCE_URL}")
-    private String resourceServerUrl;
+    //@Value("${RESOURCE_URL}")
+    private String resourceServerUrl =  "auth0-authserver.dev.h2o-2-22372.h2o.vmware.com";
 
     @Bean
     public WebClient webClient(ClientRegistrationRepository clientRegistrationRepository,

@@ -11,8 +11,8 @@ import java.util.ArrayList;
 @Controller
 public class TodoController {
 
-    @Value("${RESOURCE_URL}")
-    private String resourceServerUrl;
+    //@Value("${RESOURCE_URL}")
+    private String resourceServerUrl = "auth0-authserver.dev.h2o-2-22372.h2o.vmware.com";
 
     private final TodoService todoService;
 

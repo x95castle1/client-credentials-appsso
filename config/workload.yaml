@@ -11,16 +11,16 @@ spec:
   build:
     env:
     - name: BP_JVM_VERSION
-      value: "17"
+      value: "8"
   serviceClaims:
   # this name has to match the client registration you want to use.
   - name: auth0-client-registration
     ref:
       apiVersion: services.apps.tanzu.vmware.com/v1alpha1
       kind: ResourceClaim
-      name: appsso-starter-java-for-auth0
+      name: client-credentials-java-for-auth0
   source:
     git:
       ref:
         branch: main
-      url: https://github.com/x95castle1/appsso-starter-java
+      url: https://github.com/x95castle1/client-credentials-appsso

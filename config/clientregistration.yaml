@@ -1,0 +1,23 @@
+apiVersion: sso.apps.tanzu.vmware.com/v1alpha1
+kind: ClientRegistration
+metadata:
+  name: client-credentials-client-registration
+  namespace: dev
+spec:
+  authServerSelector:
+    matchLabels:
+      env: production
+      name: auth0-authserver
+  authorizationGrantTypes:
+    - client_credentials
+    - refresh_token
+  clientAuthenticationMethod: client_secret_post
+  redirectURIs:
+    - https://client-credentials.dev.h2o-2-22372.h2o.vmware.com/login/oauth2/code/client-credentials-client-registration
+    - http://client-credentials.dev.h2o-2-22372.h2o.vmware.com/login/oauth2/code/client-credentials-client-registration
+  scopes:
+    - name: openid
+    - name: email
+    - name: profile
+    - name: "roles"
+    - name: "message.read"

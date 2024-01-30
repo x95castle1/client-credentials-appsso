@@ -5,20 +5,6 @@ server:
 spring:
   security:
     oauth2:
-      client:
-        provider:
-          appsso:
-            issuer-uri: https://dev-pbi3csp88xs4ezg5.us.auth0.com/
-        registration:
-          client-credentials-client-registration:
-            provider: appsso
-            client-id: xxxx
-            client-secret: xxxxx
-            scope: openid, email, profile
-
-okta:
-  oauth2:
-    # Replace with the domain of your Auth0 tenant.
-    issuer: https://dev-pbi3csp88xs4ezg5.us.auth0.com/
-    # Replace with the API Identifier for your Auth0 API.
-    audience: https://my-api
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9000/oauth2/jwks

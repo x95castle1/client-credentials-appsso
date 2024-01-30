@@ -7,4 +7,4 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://auth0-authserver.dev.h2o-2-22372.h2o.vmware.com/oauth2/jwks
+          issuer-uri: https://auth0-authserver.dev.h2o-2-22372.h2o.vmware.com

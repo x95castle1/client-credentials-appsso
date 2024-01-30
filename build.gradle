@@ -23,8 +23,9 @@ repositories {
 
 dependencies {
     //implementation 'com.okta.spring:okta-spring-boot-starter:3.0.5'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-
+    
     testImplementation 'org.springframework.security:spring-security-test'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'junit:junit:4.13.2'

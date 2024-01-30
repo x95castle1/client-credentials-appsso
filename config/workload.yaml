@@ -19,6 +19,11 @@ spec:
       apiVersion: services.apps.tanzu.vmware.com/v1alpha1
       kind: ResourceClaim
       name: client-credentials-java-for-auth0
+  - name: ca-cert
+    ref:
+      apiVersion: v1 
+      kind: Secret
+      name: tap-ca 
   source:
     git:
       ref:

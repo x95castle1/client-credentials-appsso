@@ -11,7 +11,7 @@ spec:
   build:
     env:
     - name: BP_JVM_VERSION
-      value: "8"
+      value: "17"
   serviceClaims:
   # this name has to match the client registration you want to use.
   - name: auth0-client-registration

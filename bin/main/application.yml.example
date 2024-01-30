@@ -1,0 +1,10 @@
+debug: true
+server:
+  port: 3010
+
+okta:
+  oauth2:
+    # Replace with the domain of your Auth0 tenant.
+    issuer: https://{DOMAIN}/
+    # Replace with the API Identifier for your Auth0 API.
+    audience: {API_IDENTIFIER}

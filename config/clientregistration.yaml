@@ -16,4 +16,5 @@ spec:
     - https://client-credentials.dev.h2o-2-22372.h2o.vmware.com/login/oauth2/code/client-credentials-client-registration
     - http://client-credentials.dev.h2o-2-22372.h2o.vmware.com/login/oauth2/code/client-credentials-client-registration
   scopes:
-    - name: "message.read"
+    - name: "developer.read"
+    - name: "developer.write"

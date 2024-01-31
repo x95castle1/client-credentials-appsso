@@ -27,8 +27,18 @@ public class APIController {
         return new Message("All good. You can see this because you are Authenticated.");
     }
 
-    @GetMapping(value = "/private-scoped")
-    public Message privateScopedEndpoint() {
-        return new Message("All good. You can see this because you are Authenticated with a Token granted the 'read:messages' scope");
+    @GetMapping(value = "/private-read")
+    public Message privateReadScopedEndpoint() {
+        return new Message("All good. You can see this because you are Authenticated with a Token granted the 'developer.read' scope");
+    }
+
+    @GetMapping(value = "/private-write")
+    public Message privateWriteScopedEndpoint() {
+        return new Message("All good. You can see this because you are Authenticated with a Token granted the 'developer.write' scope");
+    }
+
+    @GetMapping(value = "/private-admin")
+    public Message privateAdminScopedEndpoint() {
+        return new Message("All good. You can see this because you are Authenticated with a Token granted the 'developer.admin' scope");
     }
 }

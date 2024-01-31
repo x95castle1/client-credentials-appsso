@@ -12,9 +12,6 @@ spec:
     - client_credentials
     - refresh_token
   clientAuthenticationMethod: client_secret_basic
-  redirectURIs:
-    - https://client-credentials.dev.h2o-2-22372.h2o.vmware.com/login/oauth2/code/client-credentials-client-registration
-    - http://client-credentials.dev.h2o-2-22372.h2o.vmware.com/login/oauth2/code/client-credentials-client-registration
   scopes:
     - name: openid
     - name: developer.read

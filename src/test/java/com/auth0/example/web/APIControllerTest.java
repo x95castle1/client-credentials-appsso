@@ -80,7 +80,7 @@ public class APIControllerTest {
 
     @Test
     public void testPrivateScopedEndpointReturnsUnauthorizedWhenNoUser() throws Exception {
-        mockMvc.perform(get("/api/private-scoped"))
+        mockMvc.perform(get("/api/private-read"))
                 .andDo(print())
                 .andExpect(status().isUnauthorized())
                 .andReturn();
@@ -89,16 +89,16 @@ public class APIControllerTest {
     @Test
     @WithMockUser(username = "testUser")
     public void testPrivateScopedEndpointReturnsForbiddenWhenNoScopes() throws Exception {
-        mockMvc.perform(get("/api/private-scoped"))
+        mockMvc.perform(get("/api/private-read"))
                 .andDo(print())
                 .andExpect(status().isForbidden())
                 .andReturn();
     }
 
     @Test
-    @WithMockUser(username = "testUser", authorities = {"SCOPE_read:messages"})
+    @WithMockUser(username = "testUser", authorities = {"SCOPE_developer.read"})
     public void testPrivateScopedEndpointReturnsOkWhenProperScopes() throws Exception {
-        MvcResult mvcResult = mockMvc.perform(get("/api/private-scoped"))
+        MvcResult mvcResult = mockMvc.perform(get("/api/private-read"))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andReturn();
@@ -107,9 +107,9 @@ public class APIControllerTest {
     }
 
     @Test
-    @WithMockUser(username = "testUser", authorities = {"SCOPE_write:messages"})
+    @WithMockUser(username = "testUser", authorities = {"SCOPE_developer.write"})
     public void testPrivateScopedEndpointReturnsForbiddenWhenIncorrectScopes() throws Exception {
-        mockMvc.perform(get("/api/private-scoped"))
+        mockMvc.perform(get("/api/private-read"))
                 .andDo(print())
                 .andExpect(status().isForbidden())
                 .andReturn();

@@ -17,7 +17,5 @@ spec:
     - http://client-credentials.dev.h2o-2-22372.h2o.vmware.com/login/oauth2/code/client-credentials-client-registration
   scopes:
     - name: openid
-    - name: email
-    - name: profile
     - name: developer.read
     - name: developer.write

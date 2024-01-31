@@ -4,10 +4,13 @@ metadata:
   labels:
     app.kubernetes.io/part-of: client-credentials
     apps.tanzu.vmware.com/workload-type: web
-    autoscaling.knative.dev/min-scale: "1"
   name: client-credentials
   namespace: dev
 spec:
+  params:
+    - name: annotations
+      value:
+        autoscaling.knative.dev/minScale: "1"
   build:
     env:
     - name: BP_JVM_VERSION

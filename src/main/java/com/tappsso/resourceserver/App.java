@@ -1,4 +1,4 @@
-package com.auth0.example;
+package com.tappsso.resourceserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

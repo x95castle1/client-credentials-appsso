@@ -1,15 +1,16 @@
-package com.auth0.example.web;
+package com.tappsso.resourceserver.web;
 
-import com.auth0.example.model.Message;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.tappsso.resourceserver.model.Message;
+
 /**
  * Handles requests to "/api" endpoints.
- * @see com.auth0.example.security.SecurityConfig to see how these endpoints are protected.
+ * @see com.tappsso.resourceserver.security.SecurityConfig to see how these endpoints are protected.
  */
 @RestController
 @RequestMapping(path = "api", produces = MediaType.APPLICATION_JSON_VALUE)

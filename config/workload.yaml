@@ -2,9 +2,9 @@ apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
   labels:
-    app.kubernetes.io/part-of: client-credentials
+    app.kubernetes.io/part-of: client-credentials-resource-server
     apps.tanzu.vmware.com/workload-type: web
-  name: client-credentials
+  name: client-credentials-resource-server
   namespace: dev
 spec:
   params:
@@ -16,12 +16,6 @@ spec:
     - name: BP_JVM_VERSION
       value: "17"
   serviceClaims:
-  # this name has to match the client registration you want to use.
-  - name: auth0-client-registration
-    ref:
-      apiVersion: services.apps.tanzu.vmware.com/v1alpha1
-      kind: ResourceClaim
-      name: client-credentials-java-for-auth0
   - name: ca-cert
     ref:
       apiVersion: v1 

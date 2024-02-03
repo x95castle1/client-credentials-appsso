@@ -1,4 +1,4 @@
-package com.auth0.example.security;
+package com.tappsso.resourceserver.security;
 
 
 import org.springframework.context.annotation.Bean;

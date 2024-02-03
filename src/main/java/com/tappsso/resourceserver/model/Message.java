@@ -1,4 +1,4 @@
-package com.auth0.example.model;
+package com.tappsso.resourceserver.model;
 
 /**
  * Simple domain object for our API to return a message.

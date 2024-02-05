@@ -2,9 +2,9 @@ apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
   labels:
-    app.kubernetes.io/part-of: client-credentials-resource-server
+    app.kubernetes.io/part-of: resource-server-client-credentials
     apps.tanzu.vmware.com/workload-type: web
-  name: client-credentials-resource-server
+  name: resource-server-client-credentials
   namespace: dev
 spec:
   params:
@@ -25,4 +25,4 @@ spec:
     git:
       ref:
         branch: main
-      url: https://github.com/x95castle1/client-credentials-appsso
+      url: https://github.com/x95castle1/client-credentials-appsso-resource-server

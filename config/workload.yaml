@@ -16,11 +16,6 @@ spec:
     - name: BP_JVM_VERSION
       value: "17"
   serviceClaims:
-  - name: appsso-demo-client-registration
-    ref:
-      apiVersion: services.apps.tanzu.vmware.com/v1alpha1
-      kind: ResourceClaim
-      name: appsso-demo-client-registration
   - name: ca-cert
     ref:
       apiVersion: v1 

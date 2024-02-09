@@ -31,7 +31,7 @@ public class OAuth2BindingsPropertiesProcessor implements BindingsPropertiesProc
             logger.info("JC: No OAuth2 Bindings Found Bro");
             return;
         }
-        logger.info("JC: issuer-uri found")
+        logger.info("JC: issuer-uri found");
         properties.put("spring.security.oauth2.resourceserver.jwt.issuer-uri", myBindings.get(0).getSecret().get("issuer-uri"));
 		
 	}

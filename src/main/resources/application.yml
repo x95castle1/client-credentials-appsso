@@ -2,9 +2,9 @@
 # server:
 #   port: 3010
 
-# spring:
-#   security:
-#     oauth2:
-#       resourceserver:
-#         jwt:
-#           issuer-uri: xxx
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://auth0-authserver.dev.h2o-2-22372.h2o.vmware.com

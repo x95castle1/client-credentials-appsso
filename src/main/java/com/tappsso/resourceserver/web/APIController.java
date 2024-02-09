@@ -1,5 +1,7 @@
 package com.tappsso.resourceserver.web;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,8 +20,11 @@ import com.tappsso.resourceserver.model.Message;
 @CrossOrigin(origins = "*")
 public class APIController {
 
+     Logger logger = LoggerFactory.getLogger(APIController.class);
+
     @GetMapping(value = "/public")
     public Message publicEndpoint() {
+        logger.info("JC: I was public bro");
         return new Message("All good. You DO NOT need to be authenticated to call /api/public.");
     }
 

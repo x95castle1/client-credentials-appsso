@@ -22,15 +22,18 @@ public class OAuth2BindingsPropertiesProcessor implements BindingsPropertiesProc
 	{   
         if (!environment.getProperty("org.springframework.cloud.bindings.boot.oauth2.enable", Boolean.class, true)) 
         {
+            System.out.println("JC: Bindings not enabled");
             logger.info("JC: Bindings not enabled");
             return;
         }
         List<Binding> myBindings = bindings.filterBindings(TYPE);
         if (myBindings.size() == 0) 
         {
+            System.out.println("JC: No OAuth2 Bindings Found Bro");
             logger.info("JC: No OAuth2 Bindings Found Bro");
             return;
         }
+        System.out.println("JC: issuer-uri found");
         logger.info("JC: issuer-uri found");
         properties.put("spring.security.oauth2.resourceserver.jwt.issuer-uri", myBindings.get(0).getSecret().get("issuer-uri"));
 		

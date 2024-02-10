@@ -21,6 +21,11 @@ spec:
       apiVersion: v1 
       kind: Secret
       name: tap-ca 
+  - name: appsso-demo-client-registration
+    ref:
+      apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+      kind: ResourceClaim
+      name: appsso-demo-client-registration
   source:
     git:
       ref:

@@ -24,6 +24,7 @@ public class APIController {
 
     @GetMapping(value = "/public")
     public Message publicEndpoint() {
+        System.out.println("JC: I was public bro");
         logger.info("JC: I was public bro");
         return new Message("All good. You DO NOT need to be authenticated to call /api/public.");
     }

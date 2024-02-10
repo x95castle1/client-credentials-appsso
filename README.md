@@ -10,7 +10,7 @@ A workload.yaml sample has been provided. You can apply this in your TAP develop
 
 ### Application Changes
 
-You will need to update your issuer-uri to point to the AuthServer endpoint in your `application.yml`. (TODO: Future changes will read this from a servicebinding secret)
+You will need to update your issuer-uri to point to the AuthServer endpoint in your `application.yml` or allow the spring cloud bindings to override via a ServiceBinding.
 
 ```Yaml
 spring:
@@ -20,7 +20,6 @@ spring:
         jwt:
           issuer-uri: https://xxxx.com
 ```
-
 
 ### TAP Workload
 
@@ -48,12 +47,24 @@ spec:
       apiVersion: v1 
       kind: Secret
       name: tap-ca 
+  # This will allow us to inject the issuer-uri into the application via a servicebinding.
+  # This requires a using a BindingsPropertiesProcessor to inject the property at start time.
+  - name: appsso-demo-client-registration
+    ref:
+      apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+      kind: ResourceClaim
+      name: appsso-demo-client-registration
   source:
     git:
       ref:
         branch: main
       url: https://github.com/x95castle1/client-credentials-appsso-resource-server
 ```
+
+### OAuth2BindingsPropertiesProcessor
+
+[Spring Cloud Bindings](https://github.com/spring-cloud/spring-cloud-bindings?tab=readme-ov-file#spring-security-oauth2) will not detect the `spring.security.oauth2.resourceserver.jwt.issuer-uri` property and override the value of the property via the mount servicebinding (Unfortunately, this property is not part of Spring Cloud Bindings). However, you can use a `BindingsPropertiesProcessor` to look up the property in any mounted servicebindings. This example uses this method via the `OAuth2BindingsPropertiesProcessor` class. If a ResourceClaim in a Workload is made against a secret with the type of `servicebinding.io/oauth2` then `OAuth2BindingsPropertiesProcessor` will look up the `issuer-uri` property and inject the value into the `spring.security.oauth2.resourceserver.jwt.issuer-uri` property.
+
 ### Endpoints
 
 There are 5 endpoints to test with:

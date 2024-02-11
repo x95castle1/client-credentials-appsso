@@ -1,4 +1,4 @@
-package com.tappsso.resourceserver;
+package com.tappsso.resourceserver.config;
 
 import java.util.List;
 import java.util.Map;

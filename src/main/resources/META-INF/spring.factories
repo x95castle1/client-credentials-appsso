@@ -1,1 +1,1 @@
-org.springframework.cloud.bindings.boot.BindingsPropertiesProcessor=com.tappsso.resourceserver.OAuth2BindingsPropertiesProcessor
+org.springframework.cloud.bindings.boot.BindingsPropertiesProcessor=com.tappsso.resourceserver.config.OAuth2BindingsPropertiesProcessor
